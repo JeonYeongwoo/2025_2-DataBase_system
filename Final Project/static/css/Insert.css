@@ -1,0 +1,153 @@
+/* ===== NAVBAR 공통 스타일 ===== */
+
+/* NAVBAR 좌우 여백 완전 제거 */
+.navbar {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+}
+
+.navbar-default {
+    background-color: rgb(235, 235, 237) !important;
+    border-color: rgb(235, 235, 237) !important;
+}
+
+/* NAVBAR 내부 컨테이너 padding 제거 */
+.navbar .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* NAVBAR flex 정렬 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 좌측: Homepage */
+.navbar-header {
+    display: flex;
+    align-items: center;
+}
+
+/* 우측 메뉴 */
+.navbar-right,
+.nav.navbar-nav.navbar-right {
+    display: flex !important;
+    align-items: center;
+    margin-left: auto !important;
+}
+
+/* 드롭다운 간격 */
+.navbar-right > li {
+    margin-left: 15px;
+}
+
+/* 드롭다운 스타일 */
+.dropdown-menu li a {
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+/* ===== 전체 바디 스타일 ===== */
+
+body {
+    font-family: "Arial", sans-serif;
+    background-color: #f5f6fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* 제목 */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/* 링크 버튼 공통 */
+a {
+    display: inline-block;
+    margin: 10px 10px;
+    padding: 10px 18px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+a:hover {
+    background-color: #2980b9;
+}
+
+/* ===== 폼 카드 스타일 ===== */
+
+.form-wrapper {
+    max-width: 480px;
+    margin: 40px auto;
+}
+
+.form-card {
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-card h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* ===== input 요소 스타일 ===== */
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #34495e;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #dcdde1;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+/* ===== 버튼 스타일 ===== */
+
+.btn-submit {
+    width: 100%;
+    padding: 10px 0;
+    margin-top: 15px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-submit:hover {
+    background-color: #2980b9;
+}
+
+/* 뒤로가기/링크 그룹 */
+.back-links {
+    text-align: center;
+    margin-top: 15px;
+}

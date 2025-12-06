@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Vehicle Info</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Insert.css') }}">
+
+        <!-- 부트스트랩 코드-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+            <meta charset="UTF-8">
+
+</head>
+<body>
+            <div class="bg-1">
+            <nav class="navbar navbar-default">
+                <div class="container">
+
+                    <!-- 좌측 -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">Homepage</a>
+                    </div>
+
+                    <!-- 우측 -->
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">Insert <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="residentInsert">Insert Resident</a></li>
+                                    <li><a href="phoneInsert">Insert Phone</a></li>
+                                    <li><a href="unitInsert">Insert Unit</a></li>
+                                    <li><a href="vehicleInsert">Insert Vehicle</a></li>
+                                    <li><a href="buildingInsert">Insert Building</a></li>
+                                    <li><a href="unitResidentRelationInsert">Relation Management</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">Info <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/ResidentInfo">Resident Info</a></li>
+                                    <li><a href="/UnitInfo">Unit Info</a></li>
+                                    <li><a href="/VehicleInfo">Vehicle Info</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        
+        </div>
+
+    <h2>Unit_Resident_relation Insert</h2>
+    <div style="text-align:center; font-size:18px; margin:30px 50px; border : 1px solid black; padding:50px;">
+
+        <form method="POST">
+            building_id :
+            <input name="building_id" placeholder="building_id (FK)" required><br><br>
+
+            unit_id :
+            <input name="unit_id" placeholder="unit_id (FK)" required><br><br>
+
+            resident_id :
+            <input name="resident_id" placeholder="resident_id (FK)" required><br><br>
+
+            <button type="submit">Insert</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Unit Info</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Design.css') }}">
+
+        <!-- 부트스트랩 코드-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <meta charset="UTF-8">
+</head>
+<body>
+    <div class="bg-1">
+        <nav class="navbar navbar-default">
+            <div class="container">
+
+                <!-- 좌측 -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Homepage</a>
+                </div>
+
+                <!-- 우측 -->
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Insert <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="residentInsert">Insert Resident</a></li>
+                                <li><a href="phoneInsert">Insert Phone</a></li>
+                                <li><a href="unitInsert">Insert Unit</a></li>
+                                <li><a href="vehicleInsert">Insert Vehicle</a></li>
+                                <li><a href="buildingInsert">Insert Building</a></li>
+                                <li><a href="unitResidentRelationInsert">Relation Management</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown">Info <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/ResidentInfo">Resident Info</a></li>
+                                <li><a href="/UnitInfo">Unit Info</a></li>
+                                <li><a href="/VehicleInfo">Vehicle Info</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+        
+    <h2>All Units</h2>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Building ID</th>
+            <th>Unit ID</th>
+            <th>Exclusive Area</th>
+            <th>Common Area</th>
+            <th>Building Name</th>
+        </tr>
+
+        {% for u in units %}
+        <tr>
+            <td>{{ u.building_id }}</td>
+            <td>{{ u.unit_id }}</td>
+            <td>{{ u.exclusive_area }}</td>
+            <td>{{ u.common_area }}</td>
+            <td>{{ u.building_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br><br>
+
+    <!-- 🔍 검색 폼 -->
+    <form method="get" action="/UnitInfo" style="margin-bottom: 20px; text-align: center;">
+        <input type="text" name="q"
+               placeholder="동/호수, 건물명, 거주자 이름 검색"
+               value="{{ q }}" />
+        <button type="submit" class="btn btn-primary">검색</button>
+    </form>
+
+    <!-- 페이징 버튼 -->
+    <div style="text-align:center; font-size:18px; margin-top: 10px;">
+
+        {% if page > 1 %}
+            <a href="{{ url_for('unit_info', page=page-1, q=q) }}" class="btn btn-default">
+                &lt; Previous
+            </a>
+        {% endif %}
+
+        <span style="margin: 0 15px;">
+            Page {{ page }} / {{ total_pages }}
+        </span>
+
+        {% if page < total_pages %}
+            <a href="{{ url_for('unit_info', page=page+1, q=q) }}" class="btn btn-default">
+                Next &gt;
+            </a>
+        {% endif %}
+
+    </div>
+
+</body>
+</html>

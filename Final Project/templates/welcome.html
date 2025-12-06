@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Info</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Design.css') }}">
+
+        <!-- 부트스트랩 코드-->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+            <meta charset="UTF-8">
+
+</head>
+<body>
+            <div class="bg-1">
+            <nav class="navbar navbar-default">
+                <div class="container">
+
+                    <!-- 좌측 -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">Homepage</a>
+                    </div>
+
+                    <!-- 우측 -->
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">Insert <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="residentInsert">Insert Resident</a></li>
+                                    <li><a href="phoneInsert">Insert Phone</a></li>
+                                    <li><a href="unitInsert">Insert Unit</a></li>
+                                    <li><a href="vehicleInsert">Insert Vehicle</a></li>
+                                    <li><a href="buildingInsert">Insert Building</a></li>
+                                    <li><a href="unitResidentRelationInsert">Relation Management</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown">Info <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/ResidentInfo">Resident Info</a></li>
+                                    <li><a href="/UnitInfo">Unit Info</a></li>
+                                    <li><a href="/VehicleInfo">Vehicle Info</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        
+        </div>
+
+    <h2>Apartment Management System</h2>
+
+    <img src="{{ url_for('static', filename='img/apartment.jpg') }}" 
+     alt="Apartment" 
+     style="width:300px; height:auto; width:100%; max-width:600px;">
+
+    <h3>This website is designed to manage apartment-related information efficiently.</h3>
+    <h3>Please Click buttons on top-right to insert / view information.</h3>
+
+</body>
+</html>
